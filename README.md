@@ -4,6 +4,7 @@
 This project is the final demonstration of the skills learned in the Udacity Full-Stack course, featuring the use of:
 
 * Application based on Python 3 and Flask
+* Multiple class inheritance for Python objects
 * Entity modelling using Postgresql
 * Creating a number of APIs
 * Utilising SQLAlchemy ORM to abstract the application's interaction with the database
