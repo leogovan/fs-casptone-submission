@@ -27,13 +27,13 @@ and assistant. Details about this is in the README
 """
 
 ## Uncomment these 5 lines for testing and running app locally
-"""
-database_name = os.getenv('DB_NAME')
-database_user = os.getenv('DB_USER')
-database_pwd = os.getenv('DB_PASS')
-database_host = os.getenv('DB_HOST')
-database_path = "postgresql://{}/{}".format(database_host, database_name)
-"""
+
+# database_name = os.getenv('DB_NAME')
+# database_user = os.getenv('DB_USER')
+# database_pwd = os.getenv('DB_PASS')
+# database_host = os.getenv('DB_HOST')
+# database_path = "postgresql://{}/{}".format(database_host, database_name)
+
 
 ## Comment these 3 lines for testing and running app locally
 database_path = os.environ['DATABASE_URL']
