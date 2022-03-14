@@ -1,5 +1,5 @@
 #!/bin/bash
-export DATABASE_URL="postgresql://127.0.0.1:5432/fs-capstone-submission"
+#export DATABASE_URL="postgresql://127.0.0.1:5432/fs-capstone-submission"
 export FLASK_APP=app.py
 export AUTH0_DOMAIN='fsnd-leogovan.eu.auth0.com'
 export ALGORITHMS=['RS256']
