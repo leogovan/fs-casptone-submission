@@ -54,6 +54,48 @@ heroku run python manage.py db upgrade --app [my-app-name]
 
 caused a ```ModuleNotFoundError: No module named 'models'``` and as yet, I am unable to resolve.
 
+## Interacting with the live application
+While there is no front end, you are able to use the supplied postman collection to interact with the application API.
+
+Note: on first submission for project review, the included authentication tokens for the two roles will be valid. However since these only have a lifetime of 24 hours, you may need to regenerate the tokens and replace the expired ones in the collection manually. Instructions for generating new tokens can be found below in the Unit Testing section.
+
+
+### Live Location
+The live app is deployed to Heroku and located at https://fs-capstone-submission.herokuapp.com/ however, you will need the postman collection / tokens to interact directly with this.
+
+### Endpoints
+```json
+GET '/movies'
+
+- Fetches a collection of movies
+- Request arguments: none
+- Returns: an object containing a list of objects representing all the available movies
+
+{
+    "movies": [
+        {
+            "director": "Louis Leterrier",
+            "genre": "Action",
+            "movie_id": 1,
+            "movie_name": "Transporter 8",
+            "release_date": "Tue, 31 Dec 2024 00:00:00 GMT"
+        },
+        {
+            "director": "Richard Curtis",
+            "genre": "Horror",
+            "movie_id": 2,
+            "movie_name": "Love Actually - The Revenge",
+            "release_date": "Sun, 15 Jun 2025 00:00:00 GMT"
+        }
+    ],
+    "success": true,
+    "total_movies": 2
+}
+
+```
+
+
+
 ## Running the app locally
 ### Python and Postgres
 You will need Python3 installed. While this app was originally written with v3.9, it should work with 3.7 and beyond.
@@ -118,11 +160,11 @@ flask run
 
 This will launch the app and set up the tables. At this point you can choose to run the sample data setup described in the database section above.
 
-## Testing
+## Unit Testing
 ### Test prep
-To run the test you will need to first:
+To run the unit tests you will need to first:
 
-1. Generate tokens for both the director and assistant roles; and
+1. Generate tokens for both the director and assistant roles (without these, they will all fail authentication); and
 2. Add these tokens to the ```.env``` file
 
 Note: the ```.env``` file would not normally be included in a public repository but they have this time for the purposes of this project.
@@ -131,14 +173,14 @@ Note: the ```.env``` file would not normally be included in a public repository 
 1. Open an incognito browser
 2. Navigate to https://fsnd-leogovan.eu.auth0.com/authorize?audience=casting-agency&response_type=token&client_id=
 pZ3LmwWCftyO1H8zNgLENgQdGFGz8iUs&redirect_uri=http://localhost:5000
-3. Login as the director (casting-director@example.com / P@ssword123)
+3. Login as the director (```casting-director@example.com / P@ssword123```)
 4. Copy and paste the resulting url - it will look something like this:
 
-``` http://localhost:5000/#access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJjNy1ISU5NSzVpQ2s0NG5EdEVNTSJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtbGVvZ292YW4uZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyMmE2ZDY1ZjI0ZmI2MDA3MDYzNjg2YyIsImF1ZCI6ImNhc3RpbmctYWdlbmN5IiwiaWF0IjoxNjQ3MjczNDQ4LCJleHAiOjE2NDczNTk4NDgsImF6cCI6InBaM0xtd1dDZnR5TzFIOHpOZ0xFTmdRZEdGR3o4aVVzIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNvbW1pdG1lbnRzIiwiZGVsZXRlOm1vdmllcyIsImRlbGV0ZTpyb2xlcyIsImdldDphY3RvcnMiLCJnZXQ6Y29tbWl0bWVudHMiLCJnZXQ6bW92aWVzIiwiZ2V0OnJvbGVzIiwiZ2V0OnJvbGUtdHlwZXMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y29tbWl0bWVudHMiLCJwb3N0Om1vdmllcyIsInBvc3Q6cm9sZXMiXX0.fxJfQty4kLz7xnA80C-qdUM-lfq3WgkpJXHgrSLjdVcaYKtFRkhYxsDa-89B6RLe3D1pk9jWT9rTzli_SnmZfHVD1BbglSAAeFwoFS9wRwv1ag5_KxgxVS2VDzovYagNgBJmt3saiJFhb1uR4_If2WZTuXCKbBn5Xz80rKdC4FL_XYAoQsGZOWEEc353DSnZcXpp0llIJK-IMZRbBr9Sd9cdnZaW4pEcyBHE8UoODSk21-VEtGgglFWCaQ8_T1_Ifr8FQGhKgEZahHiL4gs3VFCc2uyvnwE_2Bli4nfkceCpXBvaJPuap488LlvhijFz3ungxKbfJJNZ0E6tm_IsgQ&expires_in=86400&token_type=Bearer```
+```http://localhost:5000/#access_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJjNy1ISU5NSzVpQ2s0NG5EdEVNTSJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtbGVvZ292YW4uZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyMmE2ZDY1ZjI0ZmI2MDA3MDYzNjg2YyIsImF1ZCI6ImNhc3RpbmctYWdlbmN5IiwiaWF0IjoxNjQ3MjczNDQ4LCJleHAiOjE2NDczNTk4NDgsImF6cCI6InBaM0xtd1dDZnR5TzFIOHpOZ0xFTmdRZEdGR3o4aVVzIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNvbW1pdG1lbnRzIiwiZGVsZXRlOm1vdmllcyIsImRlbGV0ZTpyb2xlcyIsImdldDphY3RvcnMiLCJnZXQ6Y29tbWl0bWVudHMiLCJnZXQ6bW92aWVzIiwiZ2V0OnJvbGVzIiwiZ2V0OnJvbGUtdHlwZXMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y29tbWl0bWVudHMiLCJwb3N0Om1vdmllcyIsInBvc3Q6cm9sZXMiXX0.fxJfQty4kLz7xnA80C-qdUM-lfq3WgkpJXHgrSLjdVcaYKtFRkhYxsDa-89B6RLe3D1pk9jWT9rTzli_SnmZfHVD1BbglSAAeFwoFS9wRwv1ag5_KxgxVS2VDzovYagNgBJmt3saiJFhb1uR4_If2WZTuXCKbBn5Xz80rKdC4FL_XYAoQsGZOWEEc353DSnZcXpp0llIJK-IMZRbBr9Sd9cdnZaW4pEcyBHE8UoODSk21-VEtGgglFWCaQ8_T1_Ifr8FQGhKgEZahHiL4gs3VFCc2uyvnwE_2Bli4nfkceCpXBvaJPuap488LlvhijFz3ungxKbfJJNZ0E6tm_IsgQ&expires_in=86400&token_type=Bearer```
 
 5. Copy the token (it's the long value inbetween ```http://localhost:5000/#access_token=``` and ```&expires_in=86400&token_type=Bearer```)
 6. Paste it in ```.env``` as the value for ```CASTING_DIRECTOR_TOKEN=```
-7. Repeat steps 1-5 for the assistant and paste the value in ```.env``` for ```CASTING_ASSISTANT_TOKEN=```
+7. Repeat steps 1-5 for the assistant (```casting-assistant@example.com / P@ssword123```) and paste the value in ```.env``` for ```CASTING_ASSISTANT_TOKEN=```
 
 ### Run the tests
 From the root folder (with Postgres running):
