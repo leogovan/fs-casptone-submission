@@ -64,7 +64,7 @@ Note: on first submission for project review, the included authentication tokens
 The live app is deployed to Heroku and located at https://fs-capstone-submission.herokuapp.com/ however, you will need the postman collection / tokens to interact directly with this.
 
 ### Endpoints
-```json
+```js
 GET '/movies'
 
 - Fetches a collection of movies
