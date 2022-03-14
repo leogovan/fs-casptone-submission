@@ -1,0 +1,764 @@
+{
+	"info": {
+		"_postman_id": "ddcfada9-a2f1-4030-bb07-ce6972f7ac2e",
+		"name": "casting-agency-fs-capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "director",
+			"item": [
+				{
+					"name": "movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie_name\": \"Class Test Movie 3\",\n    \"genre\": \"Genre\",\n    \"release_date\": \"2022-02-20\",\n    \"director\": \"Me\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"release_date\": \"2025-01-21\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"release_date\": \"2025-01-21\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actor_name\": \"Stanley Tucci\",\n    \"phone\": \"555-5555\",\n    \"age\": \"61\",\n    \"gender\": \"M\",\n    \"image_link\": \"https://media.newyorker.com/photos/617c5762d45c99c32e2e4319/master/pass/Rosner-Tucci.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actors/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/roles",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role_number\": \"300\",\n    \"role_type_id\": \"5\",\n    \"movie_id\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/roles",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/roles/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "role-types",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/role-types",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"role-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commitments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/commitments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"commitments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commitments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start_date\": \"2022-02-20\",\n    \"end_date\": \"2022-02-20\",\n    \"movie_id\": \"2\",\n    \"actor_id\": \"3\",\n    \"role_type_id\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/commitments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"commitments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commitments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{directorToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/commitments/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"commitments",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "assistant",
+			"item": [
+				{
+					"name": "movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{assistantToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{assistantToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"movie_name\": \"Class Test Movie 3\",\n    \"genre\": \"Genre\",\n    \"release_date\": \"2022-02-20\",\n    \"director\": \"Me\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{assistantToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{assistantToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/roles",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "role-types",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{assistantToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/role-types",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"role-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commitments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{assistantToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/commitments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"commitments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commitments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{assistantToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start_date\": \"2022-02-20\",\n    \"end_date\": \"2022-02-20\",\n    \"movie_id\": \"2\",\n    \"actor_id\": \"3\",\n    \"role_type_id\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/commitments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"commitments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "commitments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{assistantToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/commitments/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"commitments",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "https://fs-capstone-submission.herokuapp.com/",
+			"type": "string"
+		},
+		{
+			"key": "directorToken",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJjNy1ISU5NSzVpQ2s0NG5EdEVNTSJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtbGVvZ292YW4uZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyMmE2ZDY1ZjI0ZmI2MDA3MDYzNjg2YyIsImF1ZCI6ImNhc3RpbmctYWdlbmN5IiwiaWF0IjoxNjQ3Mjc5NTgxLCJleHAiOjE2NDczNjU5ODEsImF6cCI6InBaM0xtd1dDZnR5TzFIOHpOZ0xFTmdRZEdGR3o4aVVzIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOmNvbW1pdG1lbnRzIiwiZGVsZXRlOm1vdmllcyIsImRlbGV0ZTpyb2xlcyIsImdldDphY3RvcnMiLCJnZXQ6Y29tbWl0bWVudHMiLCJnZXQ6bW92aWVzIiwiZ2V0OnJvbGVzIiwiZ2V0OnJvbGUtdHlwZXMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y29tbWl0bWVudHMiLCJwb3N0Om1vdmllcyIsInBvc3Q6cm9sZXMiXX0.dyoShBcX-dvbEO1BQkvw8_y5p8kzhqbaL1GsqLsDFOwJnAF0ugqGfJnpNeEoYvOiPVnyN2NMjanPer_n8plk_b1pO-rbx7h6qNtZC7MOtz7yE_sMUh7WrvlOAHnsewHEgWjMPEjNE4KO1bqteXqb-dYUyqQZdHamIWS2SEshvbZ-UI5o_RAkvEy-JdcBbro8L6r4L94klzXTVfjvK6i9yaKxjbFZ9WFqgQx8cslEu8wgJ7rnz_8HVXLR39bxDSIO9YgT3tbQLiedX3xScIK8-cemXt0ZlpPR-TZbAz3n1Z5aObKzpLUE2cPKhoL-rK_wC57hRjN920TcZ_OS24QoEg",
+			"type": "string"
+		},
+		{
+			"key": "assistantToken",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlJjNy1ISU5NSzVpQ2s0NG5EdEVNTSJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtbGVvZ292YW4uZXUuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDYyMmE2ZGMzZDM2YmJiMDA2OTM2OWUzNiIsImF1ZCI6ImNhc3RpbmctYWdlbmN5IiwiaWF0IjoxNjQ3Mjc5NjI4LCJleHAiOjE2NDczNjYwMjgsImF6cCI6InBaM0xtd1dDZnR5TzFIOHpOZ0xFTmdRZEdGR3o4aVVzIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6Y29tbWl0bWVudHMiLCJnZXQ6YWN0b3JzIiwiZ2V0OmNvbW1pdG1lbnRzIiwiZ2V0Om1vdmllcyIsImdldDpyb2xlcyIsImdldDpyb2xlLXR5cGVzIiwicG9zdDpjb21taXRtZW50cyJdfQ.rNl8p7tW9ICq7Fhez714ltK6qa7nqACBcbvyHiLe-ay017FHOCHQTVyTRMCpPbpYllrSk17aDm8g18L3Io3oYupUpC7Hf6ARgWMav_kRUVb7jl_Bs0qrJTi0GrBSdhwMRlAhkKmpAgcWZCYzKRZ3n6cfWTaUFntPnnDL0p-nGB_ZB6eHHTpNvdQ5fP-p1INB5FNnIEL9-vLoIVS6a3hyaej_SdQm74WTICH0YAJs30pkbGpUheIw3s7c8eITR1i971jKmoge1IT-FotIPuqZY32ZVwd2UJF2abbcsbf2hMD9FI7KPfWD4O3xcqKlhNkjxCnnV4lCk1dbHSonXQIBTQ",
+			"type": "string"
+		}
+	]
+}
