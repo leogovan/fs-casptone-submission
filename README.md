@@ -436,8 +436,7 @@ Note: the ```.env``` file would not normally be included in a public repository 
 
 #### Generate the tokens and add to .env
 1. Open an incognito browser
-2. Navigate to https://fsnd-leogovan.eu.auth0.com/authorize?audience=casting-agency&response_type=token&client_id=
-pZ3LmwWCftyO1H8zNgLENgQdGFGz8iUs&redirect_uri=http://localhost:5000
+2. Navigate to https://fsnd-leogovan.eu.auth0.com/authorize?audience=casting-agency&response_type=token&client_id=pZ3LmwWCftyO1H8zNgLENgQdGFGz8iUs&redirect_uri=http://localhost:5000
 3. Login as the director (```casting-director@example.com / P@ssword123```)
 4. Copy and paste the resulting url - it will look something like this:
 

@@ -3,6 +3,7 @@
 #----------------------------------------------------------------------------#
 
 import os
+from config import SECRET_KEY
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, String, Integer, Date, ForeignKey, create_engine
 from dotenv import load_dotenv
@@ -12,15 +13,22 @@ load_dotenv()
 # Setup
 #----------------------------------------------------------------------------#
 
-database_path = os.environ['DATABASE_URL']
-if database_path.startswith("postgres://"):
-    database_path = database_path.replace("postgres://", "postgresql://", 1)
+database_name = os.getenv('DB_NAME')
+database_user = os.getenv('DB_USER')
+database_pwd = os.getenv('DB_PASS')
+database_host = os.getenv('DB_HOST')
+database_path = "postgresql://{}/{}".format(database_host, database_name)
+
+# database_path = os.environ['DATABASE_URL']
+# if database_path.startswith("postgres://"):
+#     database_path = database_path.replace("postgres://", "postgresql://", 1)
 
 db = SQLAlchemy()
 
 def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config["SECRET_KEY"] = SECRET_KEY
     #app.config["SQLALCHEMY_ECHO"] = True
     db.app = app
     db.init_app(app)
