@@ -68,7 +68,7 @@ The live app is deployed to Heroku and located at https://fs-capstone-submission
 
 - Fetches a collection of movies
 - Request arguments: none
-- Returns: an object containing a list of objects representing all the available movies
+- Returns: an object containing a list of objects representing all the available movies and a count of the total results
 
 ```json
 {
@@ -93,7 +93,273 @@ The live app is deployed to Heroku and located at https://fs-capstone-submission
 }
 ```
 
+```POST '/movies'```
 
+- Sends a post request to create a new movie
+- Request body:
+```json
+{
+    "movie_name": "Class Test Movie 3",
+    "genre": "Genre",
+    "release_date": "2022-02-20",
+    "director": "Me"
+}
+```
+- Returns: an object with a success True response
+
+```json
+{
+    "success": true
+}
+```
+
+```DELETE '/movies/{id}'```
+
+- Deletes a specified movie using its id
+- Request arguments: id - integer
+- Returns: an object with a success True response and the deleted movie id 
+
+```json
+{
+    "success": true,
+    "deleted_movie_id": 1
+}
+```
+
+```PATCH '/movies/{id}'```
+
+- Updates a specified movie using its id
+- Request arguments: id - integer
+- Returns: an object with a success True response and the updated movie id 
+
+```json
+{
+    "success": true,
+    "patched_movie_id": 1
+}
+```
+
+```GET '/actors'```
+
+- Fetches a collection of actors
+- Request arguments: none
+- Returns: an object containing a list of objects representing all the available actors and a count of the total results
+
+```json
+{
+    "actors": [
+        {
+            "actor_id": 1,
+            "actor_name": "Hugh Grant",
+            "age": "61",
+            "gender": "M",
+            "image_link": "https://cdn.mos.cms.futurecdn.net/27YxZH8yY9pMztx4WqpAa9.jpg"
+        },
+        {
+            "actor_id": 2,
+            "actor_name": "Jason Statham",
+            "age": "54",
+            "gender": "M",
+            "image_link": "https://www.onthisday.com/images/people/jason-statham-medium.jpg"
+        }
+    ],
+    "success": true,
+    "total_actors": 2
+}
+```
+
+```POST '/actors'```
+
+- Sends a post request to create a new actor
+- Request body:
+```json
+{
+    "actor_name": "Stanley Tucci",
+    "phone": "555-5555",
+    "age": "61",
+    "gender": "M",
+    "image_link": "https://media.newyorker.com/photos/617c5762d45c99c32e2e4319/master/pass/Rosner-Tucci.jpg"
+}
+```
+- Returns: an object with a success True response
+
+```json
+{
+    "success": true
+}
+```
+
+```DELETE '/actors/{id}'```
+
+- Deletes a specified actor using its id
+- Request arguments: id - integer
+- Returns: an object with a success True response and the deleted actor id 
+
+```json
+{
+    "success": true,
+    "deleted_actor_id": 1
+}
+```
+
+```GET '/roles'```
+
+- Fetches a collection of roles
+- Request arguments: none
+- Returns: an object containing a list of objects representing all the available roles and a count of the total results
+
+```json
+{
+    "roles": [
+        {
+            "movie_id": 1,
+            "number": 1,
+            "role_id": 1,
+            "role_type_id": 1
+        },
+        {
+            "movie_id": 1,
+            "number": 2,
+            "role_id": 2,
+            "role_type_id": 2
+        }
+    ],
+    "success": true,
+    "total_roles": 2
+}
+```
+
+```POST '/roles'```
+
+- Sends a post request to create a new role
+- Request body:
+```json
+{
+    "role_number": "300",
+    "role_type_id": "5",
+    "movie_id": "1"
+}
+```
+- Returns: an object with a success True response
+
+```json
+{
+    "success": true
+}
+```
+
+```DELETE '/roles/{id}'```
+
+- Deletes a specified role using its id
+- Request arguments: id - integer
+- Returns: an object with a success True response and the deleted role id 
+
+```json
+{
+    "success": true,
+    "deleted_role_id": 1
+}
+```
+
+```GET '/commitments'```
+
+- Fetches a collection of commitments
+- Request arguments: none
+- Returns: an object containing a list of objects representing all the available commitments and a count of the total results
+
+```json
+{
+    "commitments": [
+        {
+            "actor_id": 1,
+            "commitment_id": 1,
+            "end_date": "Wed, 01 Jun 2022 00:00:00 GMT",
+            "movie_id": 1,
+            "role_type_id": 1,
+            "start_date": "Sat, 01 Jan 2022 00:00:00 GMT"
+        },
+        {
+            "actor_id": 2,
+            "commitment_id": 2,
+            "end_date": "Thu, 01 Jun 2023 00:00:00 GMT",
+            "movie_id": 3,
+            "role_type_id": 1,
+            "start_date": "Sun, 01 Jan 2023 00:00:00 GMT"
+        }
+    ],
+    "success": true,
+    "total_sommitments": 2
+}
+```
+
+```POST '/commitments'```
+
+- Sends a post request to create a new commitment
+- Request body:
+```json
+{
+    "start_date": "2022-02-20",
+    "end_date": "2022-02-20",
+    "movie_id": "2",
+    "actor_id": "3",
+    "role_type_id": "2"
+}
+```
+- Returns: an object with a success True response
+
+```json
+{
+    "success": true
+}
+```
+
+```DELETE '/commitments/{id}'```
+
+- Deletes a specified commitment using its id
+- Request arguments: id - integer
+- Returns: an object with a success True response and the deleted commitment id 
+
+```json
+{
+    "success": true,
+    "deleted_commitment_id": 1
+}
+```
+
+```GET '/role-types'```
+
+- Fetches a collection of role-types
+- Request arguments: none
+- Returns: an object containing a list of objects representing all the available role-types and a count of the total results
+
+```json
+{
+    "role_types": [
+        {
+            "role_type": "star",
+            "role_types_id": 1
+        },
+        {
+            "role_type": "co-star",
+            "role_types_id": 2
+        },
+        {
+            "role_type": "supporting",
+            "role_types_id": 3
+        },
+        {
+            "role_type": "featured_extra",
+            "role_types_id": 4
+        },
+        {
+            "role_type": "background",
+            "role_types_id": 5
+        }
+    ],
+    "success": true,
+    "total_role_types": 5
+}
+```
 
 ## Running the app locally
 ### Python and Postgres
