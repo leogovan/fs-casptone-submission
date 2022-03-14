@@ -381,8 +381,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-
-## Database
 ### Database Model
 This is a ERD diagram of the database structure and the permissions available for the two roles:
 
@@ -398,13 +396,6 @@ createdb fs-capstone-submission
 ### Creating the Tables
 The tables will be set up by launching the app for the first time - see below.
 
-### Sample Data Setup
-With Postgres running and the tables created, you can optionally inject some sample data into the database to get started by using the test-sample-data.psql file provided. From the main folder, in the terminal run:
-
-```bash
-psql fs-capstone-submission < database/test-sample-data.psql
-```
-
 ### Set the environment variables
 Note: ensure the virtual environment is running.
 
@@ -413,7 +404,7 @@ chmod +x setup.sh
 source setup.sh
 ```
 
-## Launch the app
+### Launch the app
 
 From the root directory in the terminal, ensure the virtual environment is activated and run the below:
 
@@ -423,9 +414,18 @@ export FLASK_ENV=development
 flask run
 ```
 
-This will launch the app and set up the tables. At this point you can choose to run the sample data setup described in the database section above.
+This will launch the app and set up the tables. At this point you can choose to run the sample data setup described below.
+
+#### Optional Step: Sample Data Import
+With Postgres running and the tables created, you can optionally inject some sample data into the database to get started by using the ```test-sample-data.psql``` file provided. From the main folder, in the terminal run:
+
+```bash
+psql fs-capstone-submission < database/test-sample-data.psql
+```
 
 ## Unit Testing
+In test_app.py, there are a set of unit tests that can be run to simulate interacting with the live API.
+
 ### Test prep
 To run the unit tests you will need to first:
 
