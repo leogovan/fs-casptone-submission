@@ -448,7 +448,7 @@ pZ3LmwWCftyO1H8zNgLENgQdGFGz8iUs&redirect_uri=http://localhost:5000
 7. Repeat steps 1-5 for the assistant (```casting-assistant@example.com / P@ssword123```) and paste the value in ```.env``` for ```CASTING_ASSISTANT_TOKEN=```
 
 ### Run the tests
-From the root folder (with Postgres running):
+Ensure that the environment variables have been set as described above. Then, from the root folder (with Postgres running):
 
 ```bash
 dropdb fs-capstone-submission_test
