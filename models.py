@@ -13,15 +13,15 @@ load_dotenv()
 # Setup
 #----------------------------------------------------------------------------#
 
-database_name = os.getenv('DB_NAME')
-database_user = os.getenv('DB_USER')
-database_pwd = os.getenv('DB_PASS')
-database_host = os.getenv('DB_HOST')
-database_path = "postgresql://{}/{}".format(database_host, database_name)
+# database_name = os.getenv('DB_NAME')
+# database_user = os.getenv('DB_USER')
+# database_pwd = os.getenv('DB_PASS')
+# database_host = os.getenv('DB_HOST')
+# database_path = "postgresql://{}/{}".format(database_host, database_name)
 
-# database_path = os.environ['DATABASE_URL']
-# if database_path.startswith("postgres://"):
-#     database_path = database_path.replace("postgres://", "postgresql://", 1)
+database_path = os.environ['DATABASE_URL']
+if database_path.startswith("postgres://"):
+    database_path = database_path.replace("postgres://", "postgresql://", 1)
 
 db = SQLAlchemy()
 
